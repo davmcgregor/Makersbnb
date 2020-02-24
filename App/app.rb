@@ -4,7 +4,7 @@ class App < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Sign Up'
+    erb :index
   end
 
 end
