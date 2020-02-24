@@ -1,4 +1,22 @@
+### [Makers Academy](http://www.makersacademy.com) - Week 6 Team programming challenge 
+
+# MakersBnB 🏠
+
+A web application that allows users to list spaces they have available, and to hire spaces for the night.
+
+### Headline specifications
+
+* Any signed-up user can list a new space.
+* Users can list multiple spaces.
+* Users should be able to name their space, provide a short description of the space, and a price per night.
+* Users should be able to offer a range of dates where their space is available.
+* Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
+* Nights for which a space has already been booked should not be available for users to book that space.
+* Until a user has confirmed a booking request, that space can still be booked for that night.
+
 ### User Stories
+
+#### MVP
 
 ```
 As a user,
@@ -15,6 +33,9 @@ As a user,
 So I can rent my property,
 I would like to list a space
 ```
+
+#### More features
+
 ```
 As a user,
 So I can manage my property,
@@ -60,6 +81,10 @@ As a user,
 To prevent double-bookings,
 I would like a space to be unavailable during booked dates 
 ```
+
+### Domain model
+
+![Domain model](Domain_model.jpg)
 
 ### Mockup
 
