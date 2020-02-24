@@ -60,3 +60,7 @@ As a user,
 To prevent double-bookings,
 I would like a space to be unavailable during booked dates 
 ```
+
+### Mockup
+
+![Mockup](Mockup.jpg)
