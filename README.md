@@ -2,6 +2,8 @@
 
 # MakersBnB 🏠
 
+#### Technologies: Javascript, Jasmine, Ruby, Rspec, Capybara, Sinatra, ActiveRecord, HTML, CSS, RuboCop, ESLint
+
 A web application that allows users to list spaces they have available, and to hire spaces for the night.
 
 ### Headline specifications
@@ -89,3 +91,5 @@ I would like a space to be unavailable during booked dates
 ### Mockup
 
 ![Mockup](Mockup.jpg)
+
+### Contributors
