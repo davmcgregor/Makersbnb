@@ -1,3 +1,4 @@
+require 'bcrypt'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/base'
@@ -8,14 +9,10 @@ require 'json'
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb_development')
 
 class Makersbnb < Sinatra::Base
-  register Sinatra::ActiveRecordExtension
-  
-  configure do
-    enable :sessions, :method_override
-  end
+  # register Sinatra::ActiveRecordExtension
+  enable :sessions
 
   get '/spaces' do
-    @user = session[:user]
     erb :index
   end
 
@@ -24,8 +21,10 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/users/new' do
-    session[:user] = User.create(username: params["username"], email: params["email"], password: params["password"])
-    @user = session[:user]
+    encrypted_password = BCrypt::Password.create(params[:password])
+    user = User.create(username: params["username"], email: params["email"], password: encrypted_password)
+    session[:user_id] = user.id
+    redirect '/spaces'
   end
 
 end

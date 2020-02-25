@@ -10,6 +10,7 @@ gem 'sinatra-flash'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'rake'
+gem 'bcrypt'
 
 group :test do
   gem 'capybara'
@@ -17,4 +18,5 @@ group :test do
   gem 'rspec'
   gem 'rubocop'
   gem 'simplecov'
+  gem 'simplecov-console'
 end

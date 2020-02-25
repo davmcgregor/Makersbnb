@@ -4,10 +4,10 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'sinatra/activerecord'
-require_relative '../app'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::Console])
-
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+])
 SimpleCov.start
 
 ENV['RACK_ENV'] = 'test'
