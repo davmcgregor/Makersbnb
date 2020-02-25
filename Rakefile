@@ -1,4 +1,4 @@
-require './app/app'
+require './app/makersbnb'
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
 
