@@ -6,6 +6,10 @@ require_relative './models/spaces'
 class Makersbnb < Sinatra::Base
   enable :sessions
 
+  get '/' do
+    erb :index
+  end
+
   get '/signup' do
     erb :signup
   end
