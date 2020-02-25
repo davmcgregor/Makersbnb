@@ -6,8 +6,9 @@ require_relative './models/spaces'
 class Makersbnb < Sinatra::Base
   enable :sessions
 
-  get '/' do
-    erb :index
+  get '/spaces' do
+    @spaces = Space.all
+    erb :'index'
   end
 
   get '/signup' do
@@ -19,4 +20,13 @@ class Makersbnb < Sinatra::Base
     @user = session[:user]
   end
 
+  get '/spaces/new' do
+    erb :'spaces/new'
+  end
+
+  post '/spaces' do
+    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    redirect '/spaces'
+  end
+  
 end
