@@ -1,10 +1,18 @@
+require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/base'
 require_relative './models/user'
 require_relative './models/spaces'
+require 'json'
+
+ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb_development')
 
 class Makersbnb < Sinatra::Base
-  enable :sessions
+  register Sinatra::ActiveRecordExtension
+  
+  configure do
+    enable :sessions, :method_override
+  end
 
   get '/spaces' do
     @user = session[:user]

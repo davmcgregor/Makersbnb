@@ -1,21 +1,25 @@
+require 'simplecov'
+require 'simplecov-console'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'sinatra/activerecord'
+require_relative '../app'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::Console])
+
+SimpleCov.start
 
 ENV['RACK_ENV'] = 'test'
 ENV['ENVIRONMENT'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app/makersbnb.rb')
 
-DB_ENV ||= 'test'
-connection_details = YAML::load(File.open('./config/database.yml'))
-ActiveRecord::Base.establish_connection(connection_details[DB_ENV])
-
 Capybara.app = Makersbnb
 
 RSpec.configure do |config|
   config.before(:each) do
-    ActiveRecord::Base.connection.execute("TRUNCATE user")
+    ActiveRecord::Base.connection.execute("TRUNCATE users")
   end
 end
 

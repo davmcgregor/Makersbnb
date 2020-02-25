@@ -2,11 +2,8 @@ require './app/makersbnb'
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
 
-DB_ENV ||= 'development'
-connection_details = YAML::load(File.open('./config/database.yml'))
-ActiveRecord::Base.establish_connection(connection_details[DB_ENV])
-
-DB_ENV ||= 'test'
-connection_details = YAML::load(File.open('./config/database.yml'))
-ActiveRecord::Base.establish_connection(connection_details[DB_ENV])
-
+if ENV['RACK_ENV'] != 'production'
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new :spec
+  task default: [:spec]
+end
