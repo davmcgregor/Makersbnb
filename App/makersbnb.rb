@@ -7,6 +7,7 @@ class Makersbnb < Sinatra::Base
   enable :sessions
 
   get '/spaces' do
+    
     @name = session[:name]
     @description = session[:description]
     @price = session[:price]
