@@ -19,4 +19,12 @@ class Makersbnb < Sinatra::Base
     @user = session[:user]
   end
 
+  get '/spaces/new' do
+    erb :'spaces/new'
+  end
+
+  post '/spaces' do
+    'Thank you'
+  end
+  
 end
