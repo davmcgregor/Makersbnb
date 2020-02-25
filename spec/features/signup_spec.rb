@@ -1,6 +1,6 @@
 feature 'adding a new user' do
   scenario 'a new user signs up' do
-    visit '/signup'
+    visit '/users/new'
     fill_in('username', with: 'testusername123')
     fill_in('email', with: 'test@example.com')
     fill_in('password', with: 'password123')

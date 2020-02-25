@@ -1,2 +1,10 @@
+<% if @user %>
+<h1>Welcome to MakersBnB, <%= @user.username %> </h1>
+<% end %>
+
+
 <h1>Tortoise Tourism</h1>
-<button onclick="alert('Coming soon!');">Sign Up</button>
+<form action='/users/new' method='get'>
+    <input type='submit' value='Sign Up'/>  
+</form>
+

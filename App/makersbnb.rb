@@ -6,15 +6,16 @@ require_relative './models/spaces'
 class Makersbnb < Sinatra::Base
   enable :sessions
 
-  get '/' do
+  get '/spaces' do
+    @user = session[:user]
     erb :index
   end
 
-  get '/signup' do
+  get '/users/new' do
     erb :signup
   end
 
-  post '/signup' do
+  post '/users/new' do
     session[:user] = User.create(username: params["username"], email: params["email"], password: params["password"])
     @user = session[:user]
   end
