@@ -13,7 +13,6 @@ class Makersbnb < Sinatra::Base
   post '/signup' do
     session[:user] = User.create(username: params["username"], email: params["email"], password: params["password"])
     @user = session[:user]
-    erb :'/index' #connect to team
   end
 
 end
