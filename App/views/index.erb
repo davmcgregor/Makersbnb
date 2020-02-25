@@ -1,5 +1,11 @@
 <h1>Tortoise Tourism</h1>
 <button onclick="alert('Coming soon!');">Sign Up</button>
-<p><%= @name%><p/>
-<p><%= @description%><p/>
-<p>£<%= @price%> per night<p/>
+
+<ul>
+<% @spaces.each do |space| %>
+  <li>
+    <%= space.name %> 
+    <%= space.description %> 
+    £<%= space.price %> per night
+  </li>
+<% end %>

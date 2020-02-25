@@ -7,10 +7,7 @@ class Makersbnb < Sinatra::Base
   enable :sessions
 
   get '/spaces' do
-    
-    @name = session[:name]
-    @description = session[:description]
-    @price = session[:price]
+    @spaces = Space.all
     erb :'index'
   end
 
@@ -28,9 +25,7 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/spaces' do
-    session[:name] = params[:name]
-    session[:description] = params[:description]
-    session[:price] = params[:price]
+    Space.create(name: params[:name], description: params[:description], price: params[:price])
     redirect '/spaces'
   end
   
