@@ -4,7 +4,7 @@
 
 #### Technologies: Javascript, Jasmine, Ruby, Rspec, Capybara, Sinatra, ActiveRecord, SQL, HTML, CSS, RuboCop, ESLint
 
-[Task](#Task) | [Collaborators](#Collaborators) | [Installation Instructions](#Installation) | [Headline Specifications](#Headline_Specifications) | | [User Stories](#Headline_Specifications) | | [Further improvements](#Further_Improvements)
+[Task](#Task) | [Collaborators](#Collaborators) | [Installation Instructions](#Installation) | [Headline Specifications](#Headline_Specifications) | | [User Stories](#User_Stories) | [Domain Model](#Domain_Model) | [Mockup](#Mockup) | [Further improvements](#Further_Improvements)
 
 ![space-pic](space-pic.jpg)
 
@@ -50,6 +50,11 @@ $ rake db:migrate RACK_ENV=test
 $ rackup
 ```
 To view the app navigate to: http://localhost:9292/
+6. Tests were written with RSpec and Capybara. To run the tests in terminal: 
+```
+$ cd Makersbnb
+$ rspec
+```
 
 ## <a name="Headline_Specifications">Headline Specifications</a>
 
@@ -60,7 +65,6 @@ To view the app navigate to: http://localhost:9292/
 * Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
 * Nights for which a space has already been booked should not be available for users to book that space.
 * Until a user has confirmed a booking request, that space can still be booked for that night.
-
 
 ## <a name="User_Stories">User Stories</a>
 
@@ -135,17 +139,15 @@ To prevent double-bookings,
 I would like a space to be unavailable during booked dates 
 ```
 
-### Domain model
+## <a name="Domain_Model">Domain Model</a>
 
 ![Domain model](Domain_model.jpg)
 
-### Mockup
+## <a name="Mockup">Mockup</a>
 
 ![Mockup](Mockup.jpg)
 
-
-
- ## <a name="Further_Improvements">Further Improvements</a>
+## <a name="Further_Improvements">Further Improvements</a>
 
 * Users should receive an email whenever one of the following happens:
 - They sign up
