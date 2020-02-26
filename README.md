@@ -29,27 +29,32 @@ This challenge is the first weekly team programming challenge at [Makers Academy
 $ git clone git@github.com:davmcgregor/Makersbnb.git
 $ cd Makersbnb
 ```
+
 2. Load dependencies with bundle:
 ```
 $ gem install bundle
 $ bundle
 ```
+
 3. Access to the database is controlled by an ORM, ActiveRecord. ActiveRecord rake tasks will are used to migrate the development and test databases. 
 
 To migrate the development and test databases, please run the following command:
 ```
 $ rake db:create
 ```
+
 4. To poplulate the databases with the appropriate tables, run the following migrations:
 ```
 $ rake db:migrate
 $ rake db:migrate RACK_ENV=test
 ```
+
 5. Run the app on a local server: 
 ```
 $ rackup
 ```
 To view the app navigate to: http://localhost:9292/
+
 6. Tests were written with RSpec and Capybara. To run the tests in terminal: 
 ```
 $ cd Makersbnb
