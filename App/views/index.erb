@@ -1,23 +1,7 @@
-<% if @user %>
-  <h1>Welcome to MakersBnB, <%= @user.username %> </h1>
-<% else %>
-  <h1>Tortoise Tourism</h1>
-  <form action='/users/new' method='get'>
-    <input type='submit' value='Sign Up'>
-  </form>
-  <form action='/sessions/new' method='get'>
-    <input type='submit' value='Sign in'>
-  </form>
-<% end %>
-
-<% unless @spaces.nil? %>
-<article class="container">
-<% @spaces.each do |space| %>
-  <div class="card">
-    <p><%= space.name %></p> 
-    <p><%= space.description %></p> 
-    <p>£<%= space.price %> per night</p>
-  </div>
-<% end %>
-</article>
-<% end %>
+<h1>Tortoise Tourism</h1>
+<form action='/users/new' method='get'>
+  <input type='submit' value='Sign Up'>
+</form>
+<form action='/sessions/new' method='get'>
+  <input type='submit' value='Sign in'>
+</form>

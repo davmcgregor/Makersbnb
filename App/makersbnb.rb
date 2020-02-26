@@ -15,17 +15,22 @@ class Makersbnb < Sinatra::Base
   enable :sessions
 
   get '/' do
+    @user = (User.find_by id: session[:user_id])
+    if @user
+      redirect '/spaces'
+    else
     erb :index
+    end
   end
 
   get '/spaces' do
     @user = (User.find_by id: session[:user_id])
     @spaces = Space.all
-    erb :index
+    erb :'spaces/index'
   end
 
   get '/users/new' do
-    erb :signup
+    erb :'users/new'
   end
 
   post '/users/new' do
