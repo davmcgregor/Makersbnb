@@ -40,7 +40,11 @@
           null,
           1,
           1,
+<<<<<<< HEAD
           null,
+=======
+          1,
+>>>>>>> updaing params
           1,
           null,
           null,
@@ -87,7 +91,10 @@
           1,
           1,
           1,
+<<<<<<< HEAD
           1,
+=======
+>>>>>>> updaing params
           0,
           null,
           null

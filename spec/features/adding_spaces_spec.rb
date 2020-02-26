@@ -5,11 +5,8 @@ feature 'adding a space' do
     fill_in :name, with: 'Madonnas cottage'
     fill_in :description, with: 'Beautiful cottage in the hills'
     fill_in :price, with: 1000
-    fill_in :date_start, with:(20/01/2020)
-    fill_in :date_end, with:(20/01/2020)
-    # select(20/01/2020), from: 'date-start')
-
-
+    fill_in :date_start, with:('20/01/2020')
+    fill_in :date_end, with:('25/01/2020')
 
     click_on 'Add space'
 
@@ -17,7 +14,7 @@ feature 'adding a space' do
     expect(page).to have_content 'Madonnas cottage'
     expect(page).to have_content 'Beautiful cottage in the hills'
     expect(page).to have_content '£1000 per night'
-    expect(page).to have_content 'Available from 20-01-2020'
-    expect(page).to have_content 'Available to 25-01-2020'
+    expect(page).to have_content 'Available from 2020-01-20'
+    expect(page).to have_content 'Available to 2020-01-25'
   end
 end
