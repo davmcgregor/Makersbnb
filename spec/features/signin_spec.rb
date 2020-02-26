@@ -3,13 +3,29 @@ feature 'signing in' do
     User.create(username: 'testusername123', email: 'email', password: 'password123')
 
     visit '/'
-
-    click_button 'Sign in'
-    fill_in('username', with: 'testusername123')
-    fill_in('password', with: 'password123')
-    click_button('Submit')
+    sign_in
 
     expect(current_path).to eq '/spaces'
     expect(page).to have_content 'Welcome to MakersBnB, testusername123'
+  end
+
+  scenario 'username does not exist' do
+    User.create(username: 'testusername', email: 'email', password: 'password123')
+
+    visit '/'
+    sign_in
+
+    expect(current_path).to eq '/sessions/new'
+    expect(page).to have_content 'Please check your email or password'
+  end
+
+  scenario 'password does not exist' do
+    User.create(username: 'testusername123', email: 'email', password: 'password')
+
+    visit '/'
+    sign_in
+
+    expect(current_path).to eq '/sessions/new'
+    expect(page).to have_content 'Please check your email or password'
   end
 end
