@@ -10,4 +10,5 @@ feature 'viewing homepage' do
     expect(page).to have_selector(:link_or_button, 'Sign Up')
     end
 
+
 end

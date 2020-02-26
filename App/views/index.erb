@@ -7,3 +7,15 @@
   </form>
 <% end %>
 
+<h1>Tortoise Tourism</h1>
+<button onclick="alert('Coming soon!');">Sign Up</button>
+
+<article class="container">
+<% @spaces.each do |space| %>
+  <div class="card">
+    <p><%= space.name %></p> 
+    <p><%= space.description %></p> 
+    <p>£<%= space.price %> per night</p>
+  </div>
+<% end %>
+</article>
