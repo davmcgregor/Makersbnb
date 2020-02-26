@@ -2,11 +2,56 @@
 
 # MakersBnB 🏠
 
-#### Technologies: Javascript, Jasmine, Ruby, Rspec, Capybara, Sinatra, ActiveRecord, HTML, CSS, RuboCop, ESLint
+#### Technologies: Javascript, Jasmine, Ruby, Rspec, Capybara, Sinatra, ActiveRecord, SQL, HTML, CSS, RuboCop, ESLint
 
-A web application that allows users to list spaces they have available, and to hire spaces for the night.
+[Task](#Task) | [Collaborators](#Collaborators) | [Installation Instructions](#Installation) | [Headline Specifications](#Headline_Specifications) | | [User Stories](#Headline_Specifications) | | [Further improvements](#Further_Improvements)
 
-### Headline specifications
+![space-pic](space-pic.jpg)
+
+## <a name="Task">The Task</a>
+
+Build a web application that allows users to list spaces they have available, and to hire spaces for the night.
+
+This challenge is the first weekly team programming challenge at [Makers Academy](https://github.com/makersacademy).
+
+## <a name="Collaborators">Collaborators</a>
+
+[Elena Beccaro](https://github.com/elebecca)
+[Liz Daly](https://github.com/lookupdaily)
+[Barri Faryad](https://github.com/BarriF13)
+[Ellie Jones](https://github.com/EllieRichardsonJones)
+[David McGregor](https://github.com/davmcgregor)
+
+## <a name="Installation">Installation Instructions</a>
+
+1. Fork this repository, clone to your local machine then change into the directory:
+```
+$ git clone git@github.com:davmcgregor/Makersbnb.git
+$ cd Makersbnb
+```
+2. Load dependencies with bundle:
+```
+$ gem install bundle
+$ bundle
+```
+3. Access to the database is controlled by an ORM, ActiveRecord. ActiveRecord rake tasks will are used to migrate the development and test databases. 
+
+To migrate the development and test databases, please run the following command:
+```
+$ rake db:create
+```
+4. To poplulate the databases with the appropriate tables, run the following migrations:
+```
+$ rake db:migrate
+$ rake db:migrate RACK_ENV=test
+```
+5. Run the app on a local server: 
+```
+$ rackup
+```
+To view the app navigate to: http://localhost:9292/
+
+## <a name="Headline_Specifications">Headline Specifications</a>
 
 * Any signed-up user can list a new space.
 * Users can list multiple spaces.
@@ -16,9 +61,10 @@ A web application that allows users to list spaces they have available, and to h
 * Nights for which a space has already been booked should not be available for users to book that space.
 * Until a user has confirmed a booking request, that space can still be booked for that night.
 
-### User Stories
 
-#### MVP
+## <a name="User_Stories">User Stories</a>
+
+### MVP
 
 ```
 As a user,
@@ -32,11 +78,16 @@ I would like to be able to sign in
 ```
 ```
 As a user,
+So I can finish managing my spaces,
+I would like to be able to sign out
+```
+```
+As a user,
 So I can rent my property,
 I would like to list a space
 ```
 
-#### More features
+### More features
 
 ```
 As a user,
@@ -92,10 +143,22 @@ I would like a space to be unavailable during booked dates
 
 ![Mockup](Mockup.jpg)
 
-### Contributors
 
-[Elena Beccaro](https://github.com/elebecca)
-[Liz Daly](https://github.com/lookupdaily)
-[Barri Faryad](https://github.com/BarriF13)
-[Ellie Jones](https://github.com/EllieRichardsonJones)
-[David McGregor](https://github.com/davmcgregor)
+
+ ## <a name="Further_Improvements">Further Improvements</a>
+
+* Users should receive an email whenever one of the following happens:
+- They sign up
+- They create a space
+- They update a space
+- A user requests to book their space
+- They confirm a request
+- They request to book a space
+- Their request to book a space is confirmed
+- Their request to book a space is denied
+* Users should receive a text message to a provided number whenever one of the following happens:
+- A user requests to book their space
+- Their request to book a space is confirmed
+- Their request to book a space is denied
+* A ‘chat’ functionality once a space has been booked, allowing users whose space-booking request has been confirmed to chat with the user that owns that space
+* Basic payment implementation though Stripe.
