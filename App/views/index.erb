@@ -3,13 +3,14 @@
 <% else %>
   <h1>Tortoise Tourism</h1>
   <form action='/users/new' method='get'>
-      <input type='submit' value='Sign Up'/>  
+    <input type='submit' value='Sign Up'>
+  </form>
+  <form action='/sessions/new' method='get'>
+    <input type='submit' value='Sign in'>
   </form>
 <% end %>
 
-<h1>Tortoise Tourism</h1>
-<button onclick="alert('Coming soon!');">Sign Up</button>
-
+<% unless @spaces.nil? %>
 <article class="container">
 <% @spaces.each do |space| %>
   <div class="card">
@@ -19,3 +20,4 @@
   </div>
 <% end %>
 </article>
+<% end %>
