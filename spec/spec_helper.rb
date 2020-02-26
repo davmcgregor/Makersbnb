@@ -1,6 +1,14 @@
+require 'simplecov'
+require 'simplecov-console'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'sinatra/activerecord'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+])
+SimpleCov.start
 
 ENV['RACK_ENV'] = 'test'
 ENV['ENVIRONMENT'] = 'test'
@@ -11,7 +19,8 @@ Capybara.app = Makersbnb
 
 RSpec.configure do |config|
   config.before(:each) do
-    ActiveRecord::Base.connection.execute("TRUNCATE spaces")
+    ActiveRecord::Base.connection.execute("TRUNCATE users, spaces")
+    # ActiveRecord::Base.connection.execute("TRUNCATE spaces")
   end
 end
 
