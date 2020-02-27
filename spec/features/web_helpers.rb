@@ -13,3 +13,18 @@ def sign_up
   click_button('Submit')
 end
 
+def add_space
+  visit '/spaces/new'
+  fill_in :name, with: 'Madonnas cottage'
+  fill_in :description, with: 'Beautiful cottage in the hills'
+  fill_in :price, with: 1000
+  click_on 'Add space'
+end
+
+def view_space
+  visit '/'
+  sign_up
+  add_space
+
+  click_on 'More Details'
+end
