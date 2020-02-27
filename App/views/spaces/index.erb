@@ -21,14 +21,11 @@
     <p><%= space.name %></p> 
     <p><%= space.description %></p> 
     <p>£<%= space.price %> per night</p>
-<<<<<<< HEAD
+    <p>Available from <%= space.date_start %></p>
+    <p>Available to <%= space.date_end %></p>
     <form action="/spaces/<%= space.id %>">
       <input type='submit' value='More Details'>
     </form>
-=======
-    <p>Available from <%= space.date_start %></p>
-    <p>Available to <%= space.date_end %></p>
->>>>>>> master
   </div>
 <% end %>
 </article>
