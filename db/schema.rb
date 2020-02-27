@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2020_02_27_103607) do
     t.string "name"
     t.string "description"
     t.integer "price"
+    t.datetime "date_start"
+    t.datetime "date_end"
     t.bigint "users_id"
     t.index ["users_id"], name: "index_spaces_on_users_id"
   end
