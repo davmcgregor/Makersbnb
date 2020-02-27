@@ -12,4 +12,3 @@ def sign_up
   fill_in('password', with: 'password123')
   click_button('Submit')
 end
-
