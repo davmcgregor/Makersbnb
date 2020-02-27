@@ -20,3 +20,11 @@ def add_space
   fill_in :price, with: 1000
   click_on 'Add space'
 end
+
+def view_space
+  visit '/'
+  sign_up
+  add_space
+
+  click_on 'More Details'
+end

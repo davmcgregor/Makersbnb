@@ -4,7 +4,7 @@ class CreateSpaces < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :description
       t.integer :price
-      t.string :username, foreign_key: true
+      t.references :users, foreign_key: true
     end
   end
 end
