@@ -20,7 +20,7 @@
     <p>£<%= space.price %> per night</p>
     <p>Available from <%= space.date_start %></p>
     <p>Available to <%= space.date_end %></p>
-    <p>Rented by <%= (User.find_by id: space[:user_id]).username %></p>
+    <p>Rented by <%= (User.find_by id: space.user_id).username %> </p>
   </div>
 <% end %>
 </article>

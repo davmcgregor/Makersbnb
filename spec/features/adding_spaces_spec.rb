@@ -19,7 +19,8 @@ feature 'adding a space' do
   end
 
   scenario 'spaces linked to users' do
-    sign_in
+    User.create(username: 'testusername123', email: 'email', password: 'password123')
+    sign_up
     visit '/spaces'
 
     click_on 'Add a Space'
@@ -29,6 +30,8 @@ feature 'adding a space' do
     fill_in :price, with: 1000
     fill_in :date_start, with:('20/01/2020')
     fill_in :date_end, with:('25/01/2020')
+
+    click_on 'Add space'
 
     expect(page).to have_content 'Rented by testusername123'
   end
