@@ -1,8 +1,9 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Ellie/Makers/week-6/Makersbnb/app/makersbnb.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/app/makersbnb.rb": {
         "lines": [
+          1,
           1,
           1,
           1,
@@ -29,9 +30,9 @@
           null,
           null,
           1,
-          9,
-          9,
-          9,
+          10,
+          10,
+          10,
           null,
           null,
           1,
@@ -78,18 +79,15 @@
           1,
           1,
           1,
-          null,
-          null,
-          null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/App/models/user.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/app/models/user.rb": {
         "lines": [
           1,
           null,
@@ -100,7 +98,7 @@
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/App/models/spaces.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/app/models/spaces.rb": {
         "lines": [
           1,
           1,
@@ -111,7 +109,18 @@
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/spec/features/web_helpers.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/app/models/bookings.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/davidmcgregor/Projects/Makersbnb/spec/features/web_helpers.rb": {
         "lines": [
           1,
           3,
@@ -145,7 +154,7 @@
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/spec/features/add_booking_spec.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/spec/features/add_booking_spec.rb": {
         "lines": [
           1,
           1,
@@ -158,7 +167,7 @@
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/spec/features/adding_spaces_spec.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/spec/features/adding_spaces_spec.rb": {
         "lines": [
           1,
           1,
@@ -178,7 +187,7 @@
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/spec/features/signin_spec.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/spec/features/signin_spec.rb": {
         "lines": [
           1,
           1,
@@ -213,7 +222,7 @@
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/spec/features/signup_spec.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/spec/features/signup_spec.rb": {
         "lines": [
           1,
           1,
@@ -228,7 +237,7 @@
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/spec/features/view_space_details_spec.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/spec/features/view_space_details_spec.rb": {
         "lines": [
           1,
           1,
@@ -243,7 +252,7 @@
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/spec/features/viewing_homepage_spec.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/spec/features/viewing_homepage_spec.rb": {
         "lines": [
           1,
           null,
@@ -262,7 +271,7 @@
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/spec/space_spec.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/spec/space_spec.rb": {
         "lines": [
           null,
           1,
@@ -279,7 +288,7 @@
           null
         ]
       },
-      "/Users/Ellie/Makers/week-6/Makersbnb/spec/user_spec.rb": {
+      "/Users/davidmcgregor/Projects/Makersbnb/spec/user_spec.rb": {
         "lines": [
           1,
           1,
@@ -290,6 +299,6 @@
         ]
       }
     },
-    "timestamp": 1582808421
+    "timestamp": 1582814619
   }
 }

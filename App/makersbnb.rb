@@ -2,10 +2,11 @@ require 'bcrypt'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/base'
-require_relative './models/user'
-require_relative './models/spaces'
 require 'json'
 require 'sinatra/flash'
+require_relative './models/user'
+require_relative './models/spaces'
+require_relative './models/bookings'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb_development')
 
@@ -71,12 +72,9 @@ class Makersbnb < Sinatra::Base
   end
 
   post '/bookings/new' do
-    @user_id = (User.find_by id: session[:user_id])
-    @space_id = (Space.find_by id: session[:space_id])
-
-    #@user = (User.find_by id: session[:user_id])
-    # @space_id = (Space.find_by id: session[:user_id])
-    Booking.create(date_start: params["date_start"], date_end: params["date_end"], user_id: @user_id, space_id: @space_id)
+    @user_id = (User.find_by id: session[:user_id]).id
+    @space_id = session[:space_id]
+    Booking.create(date_start: params["date_start"], date_end: params["date_end"], users_id: @user_id, spaces_id: @space_id)
     flash[:notice] = "Booking Requested"
     redirect '/spaces'
   end
