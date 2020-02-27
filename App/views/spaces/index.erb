@@ -18,6 +18,11 @@
     <p><%= space.name %></p> 
     <p><%= space.description %></p> 
     <p>£<%= space.price %> per night</p>
+    <form action='/bookings/new' method='post'>
+      <input type="date" name="start_booking">
+      <input type="date" name="end_booking">
+      <input type='submit' value='Book'>
+    </form>
   </div>
 <% end %>
 </article>

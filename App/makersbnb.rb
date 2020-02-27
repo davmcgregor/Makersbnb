@@ -63,5 +63,13 @@ class Makersbnb < Sinatra::Base
     Space.create(name: params[:name], description: params[:description], price: params[:price])
     redirect '/spaces'
   end
+
+  post '/bookings/new' do
+    @user = (User.find_by id: session[:user_id])
+    # @space = (Space.find_by id: session[:space_id])
+    Booking.create(start_date: params[:start_date], end_date: params[:end_date], user_id: @user, spaces_id: 1)
+    flash[:notice] = "Booking Requested"
+    redirect '/spaces'
+  end
   
 end
