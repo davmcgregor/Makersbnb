@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_111846) do
     t.string "description"
     t.integer "price"
     t.string "username"
+    t.datetime "date_start"
+    t.datetime "date_end"
   end
 
   create_table "users", force: :cascade do |t|
