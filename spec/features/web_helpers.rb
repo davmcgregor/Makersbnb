@@ -1,5 +1,5 @@
 def sign_in
-  click_button 'Sign in'
+  click_button 'Sign In'
   fill_in('username', with: 'testusername123')
   fill_in('password', with: 'password123')
   click_button('Submit')
@@ -25,6 +25,5 @@ def view_space
   visit '/'
   sign_up
   add_space
-
   click_on 'More Details'
 end

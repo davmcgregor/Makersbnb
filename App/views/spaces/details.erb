@@ -1,13 +1,27 @@
 <h2>
   <%= flash[:notice] %>
 </h2>
-<div>
-    <p><%= @space.name %></p> 
-    <p><%= @space.description %></p> 
-    <p>£<%= @space.price %> per night</p>
-    <form action='/bookings/new' method='post'>
-      <input type='date' name='date_start'>
-      <input type='date' name='date_end'>
-      <input type='submit' value='Book'>
-    </form>
-</div>
+<% if @user %>
+  <form action="/sessions/destroy" method="post">
+    <input type="submit" value="Sign Out" />
+  </form>
+
+  <div>
+      <p><%= @space.name %></p> 
+      <p><%= @space.description %></p> 
+      <p>£<%= @space.price %> per night</p>
+      <form action='/bookings/new' method='post'>
+        <input type='date' name='date_start'>
+        <input type='date' name='date_end'>
+        <input type='submit' value='Book'>
+      </form>
+  </div>
+
+<% else %>
+  <form action='/users/new' method='get'>
+    <input type='submit' value='Sign Up'>
+  </form>
+  <form action='/sessions/new' method='get'>
+    <input type='submit' value='Sign In'>
+  </form>
+<% end %>

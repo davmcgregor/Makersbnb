@@ -57,6 +57,7 @@ class Makersbnb < Sinatra::Base
   end
 
   get '/spaces/new' do
+    @user = (User.find_by id: session[:user_id])
     erb :'spaces/new'
   end
 
@@ -67,6 +68,7 @@ class Makersbnb < Sinatra::Base
   end
 
   get '/spaces/:id' do
+    @user = (User.find_by id: session[:user_id])
     @space = Space.find(params[:id]) 
     session[:space_id] = @space.id
     erb :'spaces/details'
@@ -77,6 +79,12 @@ class Makersbnb < Sinatra::Base
     @space_id = session[:space_id]
     Booking.create(date_start: params["date_start"], date_end: params["date_end"], users_id: @user_id, spaces_id: @space_id)
     flash[:notice] = "Booking Requested"
+    redirect '/spaces'
+  end
+
+  post '/sessions/destroy' do
+    session.clear
+    flash[:notice] = 'Signed Out'
     redirect '/spaces'
   end
   
