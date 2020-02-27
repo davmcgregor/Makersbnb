@@ -15,8 +15,6 @@ class Makersbnb < Sinatra::Base
   get '/spaces' do
     @user = (User.find_by id: session[:user_id])
     @spaces = Space.all
-    p @spaces
-    p @spaces.date_start 
     erb :index
   end
 
