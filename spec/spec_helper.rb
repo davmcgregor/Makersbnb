@@ -20,7 +20,7 @@ Capybara.app = Makersbnb
 
 RSpec.configure do |config|
   config.before(:each) do
-    ActiveRecord::Base.connection.execute("TRUNCATE users, spaces")
+    ActiveRecord::Base.connection.execute("TRUNCATE users, spaces, bookings")
     # ActiveRecord::Base.connection.execute("TRUNCATE spaces")
   end
 end

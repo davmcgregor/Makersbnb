@@ -1,31 +1,39 @@
+<h2>
+  <%= flash[:notice] %>
+</h2>
+
 <% if @user %>
   <h1>Welcome to MakersBnB, <%= @user.username %> </h1>
+  <form action="/sessions/destroy" method="post">
+    <input type="submit" value="Sign Out" />
+  </form>
+
+  <h1>Spaces:</h1>
+    <article class="container">
+      <% @spaces.each do |space| %>
+        <div class="card">
+          <p><%= space.name %></p> 
+          <p><%= space.description %></p> 
+          <p>£<%= space.price %> per night</p>
+          <p>Available from <%= space.date_start %></p>
+          <p>Available to <%= space.date_end %></p>
+          <p>Rented by <%= (User.find_by id: space.user_id).username %> </p>
+          <form action="/spaces/<%= space.id %>">
+            <input type='submit' value='More Details'>
+          </form>
+        </div>
+      <% end %>
+    </article>
+
+    <form action='/spaces/new'>
+      <input type='submit' value='Add a Space'/>
+    </form>
+
 <% else %>
-  <h1>Tortoise Tourism</h1>
   <form action='/users/new' method='get'>
     <input type='submit' value='Sign Up'>
   </form>
   <form action='/sessions/new' method='get'>
-    <input type='submit' value='Sign in'>
+    <input type='submit' value='Sign In'>
   </form>
 <% end %>
-
-<h1>Spaces:</h1>
-<% unless @spaces.nil? %>
-<article class="container">
-<% @spaces.each do |space| %>
-  <div class="card">
-    <p><%= space.name %></p> 
-    <p><%= space.description %></p> 
-    <p>£<%= space.price %> per night</p>
-    <p>Available from <%= space.date_start %></p>
-    <p>Available to <%= space.date_end %></p>
-    <p>Rented by <%= (User.find_by id: space.user_id).username %> </p>
-  </div>
-<% end %>
-</article>
-<% end %>
-
-<form action='/spaces/new'>
-  <input type='submit' value='Add a Space'/>
-</form>
