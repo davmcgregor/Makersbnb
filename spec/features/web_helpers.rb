@@ -1,4 +1,5 @@
 def sign_in
+  visit '/'
   click_button 'Sign in'
   fill_in('username', with: 'testusername123')
   fill_in('password', with: 'password123')
