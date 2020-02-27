@@ -95,6 +95,11 @@ As a user,
 So I can rent my property,
 I would like to list a space
 ```
+```
+As a user,
+So I can manage my properties,
+I would like my properties to be linked to my account
+```
 
 ### More features
 
