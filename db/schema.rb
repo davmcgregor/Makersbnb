@@ -42,5 +42,5 @@ ActiveRecord::Schema.define(version: 2020_02_27_103607) do
 
   add_foreign_key "bookings", "spaces", column: "spaces_id"
   add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "spaces", "users", column: "user_id"
+  add_foreign_key "spaces", "users"
 end
