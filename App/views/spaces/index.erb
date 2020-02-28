@@ -4,9 +4,6 @@
 
 <% if @user %>
   <h1>Welcome to MakersBnB, <%= @user.username %> </h1>
-  <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Sign Out" />
-  </form>
 
   <h1>Spaces:</h1>
     <article class="container">

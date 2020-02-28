@@ -83,7 +83,7 @@ class Makersbnb < Sinatra::Base
     redirect '/spaces'
   end
 
-  post '/sessions/destroy' do
+  get '/sessions/destroy' do
     session.clear
     flash[:notice] = 'Signed Out'
     redirect '/spaces'
