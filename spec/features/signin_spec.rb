@@ -20,7 +20,7 @@ feature 'signing in' do
   end
 
   scenario 'password does not exist' do
-    User.create(username: 'testusername123', email: 'email', password: 'password')
+    User.create(username: 'testusername123', email: 'email', password: 'p')
 
     visit '/'
     sign_in

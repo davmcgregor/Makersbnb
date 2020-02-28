@@ -47,7 +47,7 @@ class Makersbnb < Sinatra::Base
 
   post '/sessions/new' do
     user = User.where({ username: params[:username] }).first
-    if user && BCrypt::Password.create(user.password)
+    if user && BCrypt::Password.create(user.password) == params[:password]
       session[:user_id] = user.id
       redirect '/spaces'
     else
