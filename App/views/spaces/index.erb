@@ -2,11 +2,7 @@
   <%= flash[:notice] %>
 </h2>
 
-<% if @user %>
   <h1>Welcome to MakersBnB, <%= @user.username %> </h1>
-  <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Sign Out" />
-  </form>
 
   <h1>Spaces:</h1>
     
@@ -16,7 +12,7 @@
           <% @spaces.each do |space| %>
             <div class="col-sm-4">
             <div class="card">
-            <img src="/css/img/space_1.jpg" class="card-img-top">
+            <img src="/images/space_1.jpg" class="card-img-top">
               <div class="card-header">
                 <p><%= space.name %></p> 
               </div>
@@ -40,19 +36,6 @@
         </div>
       </article>
     
-
-
     <form action='/spaces/new'>
       <input type='submit' value='Add a Space'/>
     </form>
-
-<% else %>
-  <form action='/users/new' method='get'>
-    <input type='submit' value='Sign Up'>
-  </form>
-  <form action='/sessions/new' method='get'>
-    <input type='submit' value='Sign In'>
-  </form>
-<% end %>
-
-

@@ -5,12 +5,37 @@
     <link rel="stylesheet" href="public/css/style.css">
   </head>
   <body>
-    <div id="navbar">
-      <a href="/">Home</a>
-      <a href="/users/new">Sign Up</a>
-      <a href="/sessions/new">Sign In</a>
-      <a href="/sessions/destroy">Sign Out</a>
-    </div>
+    <nav class="navbar bg-light">
+
+      <div>
+        <a class="navbar-brand text-dark" href="/">
+          <img src="/images/turtle.png" width="40" height="40" alt="Turtle logo">
+          TortoiseBnB
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav nav-pills justify-content-end">
+          <% if @user %>
+            <li class="nav-item">
+              <a class="nav-link active btn-success" href="/spaces/new">Add Space</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="/sessions/destroy">Sign Out</a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="/users/new">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="/sessions/new">Sign In</a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+    </nav>
+
     <%= yield %>
   </body>
 </html>
