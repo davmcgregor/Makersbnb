@@ -69,7 +69,6 @@
           1,
           4,
           4,
-          null,
           4,
           null,
           null,
@@ -165,6 +164,21 @@
         ]
       },
       "/Users/Ellie/Makers/week-6/Makersbnb/spec/features/add_booking_spec.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/davidmcgregor/Projects/Makersbnb/spec/features/add_booking_spec.rb": {
         "lines": [
           1,
           1,
@@ -320,16 +334,15 @@
       },
       "/Users/Ellie/Makers/week-6/Makersbnb/spec/space_spec.rb": {
         "lines": [
-          null,
           1,
           1,
           1,
           1,
           null,
-          1,
-          1,
-          1,
           null,
+          1,
+          1,
+          1,
           1,
           null,
           null
