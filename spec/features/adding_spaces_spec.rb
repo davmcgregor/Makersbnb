@@ -19,8 +19,6 @@ feature 'adding a space' do
     expect(page).to have_content 'Madonnas cottage'
     expect(page).to have_content 'Beautiful cottage in the hills'
     expect(page).to have_content '£1000 per night'
-    expect(page).to have_content 'Available from 2020-01-20'
-    expect(page).to have_content 'Available to 2020-01-25'
   end
 
   scenario 'spaces linked to users' do

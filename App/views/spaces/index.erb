@@ -21,8 +21,6 @@
                 <p class="card-text"><%= space.name %></p> 
                 <p class="card-text"><%= space.description %></p> 
                 <p class="card-text">£<%= space.price %> per night</p>
-                <p class="card-text">Available from <%= space.date_start %></p>
-                <p class="card-text">Available to <%= space.date_end %></p>
                 <p class="card-text">Rented by <%= (User.find_by id: space.user_id).username %> </p>
                 <form action="/spaces/<%= space.id %>">
                   <input type='submit' value='More Details'>
