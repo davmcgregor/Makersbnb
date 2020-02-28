@@ -2,9 +2,6 @@
   <%= flash[:notice] %>
 </h2>
 <% if @user %>
-  <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Sign Out" />
-  </form>
 
   <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -12,8 +9,8 @@
         <p class="card-text"><%= @space.name %></p> 
         <p class="card-text"><%= @space.description %></p> 
         <p class="card-text">£<%= @space.price %> per night</p>
-        <p class="card-text">Available from <%= @space.date_start %></p>
-        <p class="card-text">Available to <%= @space.date_end %></p>
+        <p class="card-text">Available from <%= (@space.date_start).strftime("%b %d, %Y") %></p>
+        <p class="card-text">Available to <%= (@space.date_end).strftime("%b %d, %Y") %></p>
         <form action='/bookings/new' method='post'>
         <input type='date' name='date_start'>
         <input type='date' name='date_end'>
