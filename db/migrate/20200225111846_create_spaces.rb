@@ -6,7 +6,7 @@ class CreateSpaces < ActiveRecord::Migration[6.0]
       t.integer :price
       t.datetime :date_start
       t.datetime :date_end
-      t.references :users, foreign_key: true
+      t.references :user, foreign_key: true
     end
   end
 end

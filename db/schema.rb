@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2020_02_27_103607) do
     t.integer "price"
     t.datetime "date_start"
     t.datetime "date_end"
-    t.bigint "users_id"
-    t.index ["users_id"], name: "index_spaces_on_users_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_spaces_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,5 +42,5 @@ ActiveRecord::Schema.define(version: 2020_02_27_103607) do
 
   add_foreign_key "bookings", "spaces", column: "spaces_id"
   add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "spaces", "users", column: "users_id"
+  add_foreign_key "spaces", "users"
 end

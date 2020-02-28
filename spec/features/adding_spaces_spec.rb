@@ -22,4 +22,22 @@ feature 'adding a space' do
     expect(page).to have_content 'Available from 2020-01-20'
     expect(page).to have_content 'Available to 2020-01-25'
   end
+
+  scenario 'spaces linked to users' do
+    User.create(username: 'testusername123', email: 'email', password: 'password123')
+    sign_up
+    visit '/spaces'
+
+    click_on 'Add a Space'
+
+    fill_in :name, with: 'Madonnas cottage'
+    fill_in :description, with: 'Beautiful cottage in the hills'
+    fill_in :price, with: 1000
+    fill_in :date_start, with:('20/01/2020')
+    fill_in :date_end, with:('25/01/2020')
+
+    click_on 'Add space'
+
+    expect(page).to have_content 'Rented by testusername123'
+  end
 end

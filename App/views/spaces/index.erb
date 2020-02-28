@@ -17,12 +17,18 @@
           <p>£<%= space.price %> per night</p>
           <p>Available from <%= space.date_start %></p>
           <p>Available to <%= space.date_end %></p>
+          <p>Rented by <%= (User.find_by id: space.user_id).username %> </p>
+          <p><%= p @space.user_id %>
           <form action="/spaces/<%= space.id %>">
             <input type='submit' value='More Details'>
           </form>
         </div>
       <% end %>
     </article>
+
+    <form action='/spaces/new'>
+      <input type='submit' value='Add a Space'/>
+    </form>
 
 <% else %>
   <form action='/users/new' method='get'>
@@ -32,7 +38,3 @@
     <input type='submit' value='Sign In'>
   </form>
 <% end %>
-
-
-
-

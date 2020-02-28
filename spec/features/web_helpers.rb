@@ -6,6 +6,7 @@ def sign_in
 end
 
 def sign_up
+  visit '/'
   click_button 'Sign Up'
   fill_in('username', with: 'testusername123')
   fill_in('email', with: 'testusername123@gmail.com')
