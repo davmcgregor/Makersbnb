@@ -19,7 +19,7 @@ def add_space
   fill_in :name, with: 'Madonnas cottage'
   fill_in :description, with: 'Beautiful cottage in the hills'
   fill_in :price, with: 1000
-  click_on 'Add space'
+  click_on 'List Space'
 end
 
 def view_space

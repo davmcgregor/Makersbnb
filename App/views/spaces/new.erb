@@ -1,22 +1,56 @@
 
 <aside><%= flash[:notice] %></aside>
-<h1>Add a Space</h1>
 
+<h1 mb-5>Add a Space</h1>
+<article class="container" style="width: 50%">
+<div class="card border-success p-2">
+<div class="card-body">
 <form action="/spaces" method="post">
-  <label for="name">Property Name</label>
-  <input type="text" id="property-name" name="name">
-  <label for="description">Description</label>
-  <textarea id="description" name="description"></textarea>
-  <label for="price">Price: £</label>
-  <input type="text" id="price" name="price" placeholder="price per night">
-  <label for="date_start"> Available from </label>
-  <input type="date" name="date_start">
-  <label for="date_end"> Available to</label>
-  <input type="date" name="date_end">
-  <label for="image">Add an image:</label>
-  <input type="url" name="image">
-
-  <input type="submit" value="Add space">
-
+  <div class="row mb-3">
+    <div class="col">
+      <label for="name">Property Name</label>
+      <input type="text" id="property-name" name="name" class="form-control">
+      <small id="textHelp" class="form-text text-muted">Make it short and snappy!</small>
+    </div>
+    <div class="col">
+      <label for="price">Price</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">£</span>
+        </div>
+        <input type="text" id="price" name="price" class="form-control">
+      </div>
+      <small id="priceHelp" class="form-text text-muted">Cost per night</small>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+    <label for="description">Description</label>
+    <textarea id="description" name="description"class="form-control"></textarea>
+    </div>
+  </div>
+  
+  <div class="row mb-3">
+    <div class="col">
+      <label for="date_start"> Available from: </label>
+      <input type="date" name="date_start" class="form-control">
+    </div>
+    <div class="col">
+      <label for="date_end"> Available to: </label>
+      <input type="date" name="date_end" class="form-control">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <label for="image">Image link:</label>
+      <input type="url" name="image" class="form-control">
+      <small id="imageHelp" class="form-text text-muted">Must be a link to an image hosted online</small>
+    </div>
+  </div>
+    <button type="submit" class="btn btn-success btn-lg">List Space</button>
+  </section>
 </form>
+</div>
+</div>
+</article>
 

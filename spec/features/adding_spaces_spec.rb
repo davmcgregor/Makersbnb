@@ -13,7 +13,7 @@ feature 'adding a space' do
     fill_in :price, with: 1000
     fill_in :date_start, with:('20/01/2020')
     fill_in :date_end, with:('25/01/2020')
-    click_on 'Add space'
+    click_on 'List Space'
 
     expect(current_path).to eq '/spaces'
     expect(page).to have_content 'Madonnas cottage'
@@ -34,7 +34,7 @@ feature 'adding a space' do
     fill_in :date_start, with:('20/01/2020')
     fill_in :date_end, with:('25/01/2020')
 
-    click_on 'Add space'
+    click_on 'List Space'
 
     expect(page).to have_content 'Rented by testusername123'
   end
