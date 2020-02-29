@@ -6,7 +6,7 @@ feature 'signing in' do
     sign_in
 
     expect(current_path).to eq '/spaces'
-    expect(page).to have_content 'Welcome to MakersBnB, testusername123'
+    expect(page).to have_content 'testusername123'
   end
 
   scenario 'username does not exist' do
