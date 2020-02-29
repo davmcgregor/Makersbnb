@@ -1,9 +1,5 @@
-<% if @user %>
-  <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Sign Out" />
-  </form>
-
-<h1>Add a shell</h1>
+<aside><%= flash[:notice] %></aside>
+<h1>Add a Space</h1>
 <form action="/spaces" method="post">
   <label for="name">Property Name</label>
   <input type="text" id="property-name" name="name">
@@ -12,17 +8,11 @@
   <label for="price">Price: £</label>
   <input type="text" id="price" name="price" placeholder="price per night">
   <label for="date_start"> Available from </label>
-  <input type='date' name='date_start'>
+  <input type="date" name="date_start">
   <label for="date_end"> Available to</label>
-  <input type='date' name='date_end'>
+  <input type="date" name="date_end">
+  <label for="image">Add an image:</label>
+  <input type="url" name="image">
 
   <input type="submit" value="Add space">
 </form>
-<% else %>
-  <form action='/users/new' method='get'>
-    <input type='submit' value='Sign Up'>
-  </form>
-  <form action='/sessions/new' method='get'>
-    <input type='submit' value='Sign In'>
-  </form>
-<% end %>

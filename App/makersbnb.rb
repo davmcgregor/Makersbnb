@@ -63,8 +63,13 @@ class Makersbnb < Sinatra::Base
 
   post '/spaces' do
     @user = (User.find_by id: session[:user_id])
-    @user.spaces.create(name: params[:name], description: params[:description], price: params[:price], date_start: params[:date_start], date_end: params[:date_end])
-    redirect '/spaces'
+    if @user
+      @user.spaces.create(name: params[:name], description: params[:description], price: params[:price], date_start: params[:date_start], date_end: params[:date_end], image: params[:image])
+      redirect '/spaces'
+    else
+      flash[:notice] = 'You need to be logged in to add a space'
+      redirect '/spaces/new'
+    end
   end
 
   get '/spaces/:id' do

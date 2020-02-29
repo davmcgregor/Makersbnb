@@ -1,3 +1,9 @@
 ./coverage
 schema.rb
 .resultset.json
+.DS_Store
+App/.DS_Store
+App/public/.DS_Store
+App/public/images/.DS_Store
+db/schema.rb
+coverage/.resultset.json
