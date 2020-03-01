@@ -1,9 +1,31 @@
-<h1>Tortoise Tourism</h1>
+<style>
+body {
+  background-image: url("home-background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% ;
+}
 
-<form action='/users/new' method='get'>
-  <input type='submit' value='Sign Up'>
-</form>
-<form action='/sessions/new' method='get'>
-  <input type='submit' value='Sign In'>
-</form>
+.home-menu {
+  text-align: center;
+  margin: auto;
+  width: 40% ;
+  padding: 60px;
+  background: white;
+  border-radius: 25px;
+  margin-top: 16% ;
 
+}
+
+</style>
+
+<div class="home-menu">
+  <h1 style="padding-bottom: 40px; font-size: 70px;">Tortoise Tourism</h1>
+  <div class="btn-group mt-5">
+    <form action='/users/new' method='get'>
+      <input type='submit' class="btn btn-success btn-lg m-3" value='Sign Up'>
+    </form>
+    <form action='/sessions/new' method='get'>
+      <input type='submit' class="btn btn-success btn-lg m-3" value='Sign In'>
+    </form>
+  </div>
+</div>
