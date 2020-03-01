@@ -6,6 +6,6 @@ feature 'adding a new user' do
     fill_in('password', with: 'password123')
     click_button('Submit')
 
-    expect(page).to have_content 'Welcome to MakersBnB, testusername123'
+    expect(page).to have_content 'testusername123'
   end
 end

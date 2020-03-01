@@ -21,8 +21,12 @@
               <a class="nav-link active btn-success" href="/spaces/new">Add Space</a>
             </li>
             <li class="nav-item">
+              <span class="nav-link disabled" href="#"><%= @user.username %></a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link text-success" href="/sessions/destroy">Sign Out</a>
             </li>
+            
           <% else %>
             <li class="nav-item">
               <a class="nav-link text-success" href="/users/new">Sign Up</a>

@@ -2,17 +2,15 @@
   <%= flash[:notice] %>
 </h2>
 
-  <h1>Welcome to MakersBnB, <%= @user.username %> </h1>
-
   <h1>Spaces:</h1>
-    
+  <% unless @spaces.nil? %>
       <article class="container"style="width: 100%">
       <div class="row">
         
           <% @spaces.each do |space| %>
             <div class="col-sm-4">
             <div class="card">
-            <img src="/images/space_1.jpg" class="card-img-top">
+            <img src="<%= space.image %>" class="card-img-top" style="height: 15rem; object-fit: cover">
               <div class="card-header">
                 <p><%= space.name %></p> 
               </div>
@@ -28,7 +26,7 @@
               </div>
             </div>
             </div>
-          </div></br>
+          </div>
         <% end %>
         
         </div>
@@ -37,3 +35,6 @@
     <form action='/spaces/new'>
       <input type='submit' value='Add a Space'/>
     </form>
+<% else %>
+  <p>Currently no spaces available</p>
+<% end %>
